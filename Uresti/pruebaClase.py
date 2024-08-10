@@ -104,9 +104,9 @@ y = [2,4,6,8,10,2,5.5,16]
 
 for i in range(len(samples)): #convert samples so that all samples have same lenght as params a+bx1+cx2+ ... nxn..
 	if isinstance(samples[i], list):
-		samples[i]=  [1]+samples[i] #se agrega el 1 de x0 (a)
+		samples[i] =  [1] + samples[i] #se agrega el 1 de x0 (a)
 	else:
-		samples[i]=  [1,samples[i]] #crea lista de parámetros X
+		samples[i] =  [1, samples[i][0]] #crea lista de parámetros X RECUERDA QUE MODIFICASTE ESTO POR UN ERROR QUE APARECÍA CON EL [0]
 print ("original samples:")
 print (samples)
 samples = scaling(samples)
