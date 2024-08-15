@@ -106,7 +106,7 @@ for i in range(len(samples)): #convert samples so that all samples have same len
 	if isinstance(samples[i], list):
 		samples[i] =  [1] + samples[i] #se agrega el 1 de x0 (a)
 	else:
-		samples[i] =  [1, samples[i]] #crea lista de parámetros X 
+		samples[i] =  [1, samples[i][0]] #crea lista de parámetros X 
 print ("original samples:")
 print (samples)
 samples = scaling(samples)
