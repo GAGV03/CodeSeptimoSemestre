@@ -132,6 +132,6 @@ while True:  #  run gradient descent until local minima is reached
 		print (params)
 		break
 
-import matplotlib.pyplot as plt  #use this to generate a graph of the errors/loss so we can see whats going on (diagnostics)
+import matplotlib.pyplot as plt  # type: ignore #use this to generate a graph of the errors/loss so we can see whats going on (diagnostics)
 plt.plot(__errors__)
 plt.show()
