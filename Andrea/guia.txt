@@ -1,4 +1,4 @@
-# Frases Motivadoras
+Frases Motivadoras
 1. "No estás solo. Siempre hay alguien dispuesto a escucharte y ayudarte."
 2. "Cada día es una nueva oportunidad para empezar de nuevo."
 3. "Eres más fuerte de lo que piensas. Sigue adelante."
@@ -8,7 +8,7 @@
 7. "Hablar sobre tus sentimientos puede ser el primer paso hacia la sanación."
 8. "Eres valioso y tu bienestar importa. No te rindas."
 
-# Datos de Contacto para Ayuda Psicológica
+Datos de Contacto para Ayuda Psicológica
 1. Línea Nacional de Prevención del Suicidio (EE.UU.): 1-800-273-8255
 2. Fundación para la Salud Mental (EE.UU.): https://www.mentalhealth.org
 3. Asociación de Ansiedad y Depresión de América (ADAA): 1-240-485-1001, https://adaa.org
@@ -20,7 +20,7 @@
 9. Línea de Crisis de Canadá: 1-833-456-4566, https://www.crisisservicescanada.ca
 10. Instituto Nacional de Salud Mental (Perú): 113, https://www.insm.gob.pe
 
-# Recursos en Línea
+Recursos en Línea
 1. BetterHelp: https://www.betterhelp.com
 2. Talkspace: https://www.talkspace.com
 3. 7 Cups: https://www.7cups.com
@@ -30,13 +30,13 @@
 7. Beyond Blue (Australia): https://www.beyondblue.org.au
 8. Red Nacional de Apoyo Emocional (México): https://www.rednacionaldeapoyoemocional.org.mx
 
-# Palabras o Expresiones que Denotan Comportamiento Depresivo
+Palabras o Expresiones que Denotan Comportamiento Depresivo
 1. "Me siento muy triste"
 2. "No tengo ganas de hacer nada"
 3. "Todo parece sin sentido"
 4. "Estoy muy ansioso"
 5. "No puedo dormir bien"
-6. "Me preocupa todo"
+6. "Me preocupa todo
 7. "Me siento solo"
 8. "No tengo a nadie con quien hablar"
 9. "Estoy agotado"

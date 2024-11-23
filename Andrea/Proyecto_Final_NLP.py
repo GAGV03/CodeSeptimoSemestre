@@ -10,9 +10,10 @@ from langchain.chains import create_retrieval_chain
 import streamlit as st
 import os
 
-os.environ['LANCHAIN_API_KEY'] = "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"
+os.environ['LANGCHAIN_API_KEY'] = "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"
 os.environ['LANGCHAIN_TRACING_V2'] = "true"
 os.environ['LANGCHAIN_PROJECT'] = "pr-IntroductionLangChain"
+
 
 if 'messages' not in st.session_state:
     st.session_state.messages = [
@@ -21,7 +22,7 @@ Eres un asistente experto en la detección de comportamientos depresivos y en of
 
 Ejemplo 1:
 Texto: "Me siento muy triste y no tengo ganas de hacer nada. Todo parece sin sentido."
-Respuesta esperada: "Parece que estás pasando por un momento difícil. No estás solo, y hay personas que pueden ayudarte. Te recomiendo que contactes a la Línea Nacional de Prevención del Suicidio al 1-800-273-8255 o visita el sitio web de la Fundación para la Salud Mental."
+Respuesta esperada: "Parece que estás pasando por un momento difícil. No estás solo, y hay personas que pueden ayudarte. Te recomiendo que contactes a la Línea Nacional de Prevención del Suicidio al 1-800-273-8255 o visita el sitio web de Betterhelp."
 
 Ejemplo 2:
 Texto: "Últimamente he estado muy ansioso y no puedo dormir bien. Me preocupa todo."
@@ -29,16 +30,16 @@ Respuesta esperada: "Lamento que estés sintiendo esto. La ansiedad puede ser mu
 
 Ejemplo 3:
 Texto: "Estoy bien, solo un poco cansado del trabajo. ¿Algun medio de ayuda por internet?"
-Respuesta esperada: "Parece que estás experimentando cansancio, lo cual es normal. Asegúrate de tomar descansos y cuidar de tu salud mental. Si necesitas hablar con alguien, hay recursos disponibles como la Línea de Ayuda de Salud Mental al 1-800-662-HELP (4357)."
+Respuesta esperada: "Parece que estás experimentando cansancio, lo cual es normal. Asegúrate de tomar descansos y cuidar de tu salud mental. Si necesitas hablar con alguien, hay recursos disponibles como la Línea de Ayuda de Salud Mental al 1-800-662-HELP (4357) o este sitio en internet :Mind (Reino Unido): https://www.mind.org.uk."
 
-Texto: "{input_text}"
+Texto: "{input}"
 Respuesta esperada:
 """)
     ]
 
 st.title('Proyecto Final NLP: Bot de asistencia psicológica')
 
-input_text = st.text_input("Escriba su consulta:")
+input = st.text_input("Escriba su consulta:")
 
 llm = OllamaLLM(model="llama3.2")
 output_parser = StrOutputParser()
@@ -53,29 +54,29 @@ retriever = db.as_retriever()
 
 document_chain = create_stuff_documents_chain(llm, ChatPromptTemplate.from_template("""
 Answer the following questions based only on the provided context. 
-Think step by step before providing a detailed answer.
+I will tip you $1000 if the user finds the answer helpful.
 <context>
            {context}                               
 </context>
-Question: {input_text}
+Question: {input}
 """))
 
 retrieval_chain = create_retrieval_chain(retriever, document_chain)
 
-if input_text:
+if input:
     try:
-        st.session_state.messages.append(("user", input_text))
+        st.session_state.messages.append(("user", input))
 
         prompt = ChatPromptTemplate.from_messages(st.session_state.messages)
         chain = prompt | llm | output_parser
 
-        response = chain.invoke({'input_text': input_text})
+        response = chain.invoke({'input': input})
         
         st.write(response)
 
         st.session_state.messages.append(("assistant", response))
 
-        doc_response = retrieval_chain.invoke({"input_text": input_text})
+        doc_response = retrieval_chain.invoke({"input": input})
         st.write("Información adicional de los documentos:")
         st.write(doc_response['answer'])
 
